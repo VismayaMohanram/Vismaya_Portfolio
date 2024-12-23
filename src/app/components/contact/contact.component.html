@@ -1,0 +1,59 @@
+<section class="contact-section">
+    <div class="contact-container">
+      <!-- Left Side: Contact Info -->
+      <div class="contact-info">
+        <h2>Contact Me</h2>
+        <p>
+          I'd love to hear from you! Whether it's a question, a project collaboration, or just a hello, feel free to get in touch.
+        </p>
+        <ul class="info-list">
+          <li><i class="fas fa-envelope"></i> <a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></li>
+          <li><i class="fas fa-phone"></i> <a href="tel:{{ contactInfo.phone }}">{{ contactInfo.phone }}</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="{{ contactInfo.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="{{ contactInfo.github }}" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="{{ contactInfo.social.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="{{ contactInfo.social.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+  
+      <!-- Right Side: Contact Form -->
+      <div class="contact-form-container">
+        <form class="contact-form" (ngSubmit)="submitForm()" #contactForm="ngForm">
+          <h2>Send a Message</h2>
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="formData.name"
+              required
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="formData.email"
+              required
+              placeholder="Your Email"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="formData.message"
+              required
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  

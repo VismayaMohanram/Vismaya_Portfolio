@@ -1,0 +1,67 @@
+<section class="skills-section">
+  <div class="container">
+    <!-- Filters -->
+    <div class="skills-filters">
+      <button
+        class="filter-button"
+        [class.active]="selectedCategory === 'All'"
+        (click)="filterSkills('All')"
+      >
+        All
+      </button>
+      <button
+        class="filter-button"
+        [class.active]="selectedCategory === 'Programming'"
+        (click)="filterSkills('Programming')"
+      >
+        Programming
+      </button>
+      <button
+        class="filter-button"
+        [class.active]="selectedCategory === 'Cloud'"
+        (click)="filterSkills('Cloud')"
+      >
+        Cloud
+      </button>
+      <button
+        class="filter-button"
+        [class.active]="selectedCategory === 'Analytics'"
+        (click)="filterSkills('Analytics')"
+      >
+        Analytics
+      </button>
+      <button
+        class="filter-button"
+        [class.active]="selectedCategory === 'Development Tools'"
+        (click)="filterSkills('Development Tools')"
+      >
+        Dev Tools
+      </button>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+      <div
+        class="skill-card"
+        *ngFor="let skill of filteredSkills"
+        [@fadeInAnimation]
+        [@filterAnimation]="selectedCategory"
+      >
+        <div class="skill-icon">
+          <i [class]="skill.icon"></i>
+        </div>
+        <div class="skill-details">
+          <h3>{{ skill.name }}</h3>
+          <div class="progress-bar">
+            <div
+              class="progress"
+              [style.width]="skill.level + '%'"
+              [style.transition]="skill.level / 10 + 's ease'"
+            ></div>
+          </div>
+          <p>{{ skill.level }}% Proficiency</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

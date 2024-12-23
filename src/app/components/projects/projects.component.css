@@ -1,0 +1,125 @@
+.projects-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa, #ffffff);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Project Card */
+.project-card {
+  perspective: 1000px; /* Establish 3D perspective for the flip effect */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Makes the card square */
+  transform-style: preserve-3d; /* Preserves 3D child transformations */
+  transition: transform 0.8s ease-in-out; /* Smooth animation for the flip */
+  border-radius: 15px;
+}
+
+.project-card:hover .card-inner {
+  transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+/* Card Front and Back */
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Prevent mirroring */
+  transform-style: preserve-3d; /* Ensure proper 3D stacking */
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  transform: rotateY(0deg); /* Default orientation for the front */
+  z-index: 2; /* Ensure front is on top by default */
+}
+
+.card-back {
+  transform: rotateY(180deg); /* Flip the back side */
+  background: #f9f9f9;
+  color: #333;
+  text-align: left;
+  padding: 2rem;
+  z-index: 1; /* Ensure back stays behind when not flipped */
+}
+
+/* Front Content */
+.image-wrapper {
+  width: 100%;
+  height: 180px; /* Set a fixed height for consistent images */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image scales proportionally */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  text-align: center;
+}
+
+.project-title h3 {
+  font-size: 1.2rem;
+  color: #003366;
+  margin: 0.5rem 0;
+}
+
+.project-duration {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Back Content */
+.project-description {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.project-details {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.project-details li {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.project-details li i {
+  margin-right: 0.7rem;
+  color: #ffba08;
+}

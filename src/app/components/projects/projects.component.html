@@ -1,0 +1,30 @@
+<section class="projects-section">
+  <div class="container">
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects">
+        <div class="card-inner">
+          <!-- Front Side -->
+          <div class="card-front">
+            <div class="image-wrapper">
+              <img [src]="project.image" alt="{{ project.title }}" class="project-image" />
+            </div>
+            <div class="project-title">
+              <h3>{{ project.title }}</h3>
+              <p class="project-duration">{{ project.duration }}</p>
+            </div>
+          </div>
+
+          <!-- Back Side -->
+          <div class="card-back">
+            <p class="project-description">{{ project.description }}</p>
+            <ul class="project-details">
+              <li *ngFor="let detail of project.details">
+                <i class="fas fa-check-circle"></i> {{ detail }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
