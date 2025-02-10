@@ -37,6 +37,13 @@
       >
         Dev Tools
       </button>
+      <button
+        class="filter-button"
+        [class.active]="selectedCategory === 'Machine Learning & AI'"
+        (click)="filterSkills('Machine Learning & AI')"
+      >
+        ML & AI
+      </button>
     </div>
 
     <!-- Skills Grid -->
