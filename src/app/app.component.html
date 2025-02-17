@@ -8,42 +8,41 @@
       </a>
     </div>
 
-    <!-- Navigation Links -->
-    <ul class="menu">
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-toggle" (click)="toggleMenu()">
+      <i class="fas" [ngClass]="menuOpen ? 'fa-times' : 'fa-bars'"></i>
+    </button>
+
+    <!-- Navigation Menu -->
+    <ul class="menu" [ngClass]="{'open': menuOpen}">
       <li [class.active]="activeSection === 'hero'">
-        <a href="javascript:void(0)" (click)="scrollToSection('hero')" class="nav-link">
-          <i class="fas fa-home"></i>
-          <span>Home</span>
+        <a href="javascript:void(0)" (click)="scrollToSection('hero'); closeMenu()" class="nav-link">
+          <i class="fas fa-home"></i> <span>Home</span>
         </a>
       </li>
       <li [class.active]="activeSection === 'education'">
-        <a href="javascript:void(0)" (click)="scrollToSection('education')" class="nav-link">
-          <i class="fas fa-graduation-cap"></i>
-          <span>Education</span>
+        <a href="javascript:void(0)" (click)="scrollToSection('education'); closeMenu()" class="nav-link">
+          <i class="fas fa-graduation-cap"></i> <span>Education</span>
         </a>
       </li>
       <li [class.active]="activeSection === 'experience'">
-        <a href="javascript:void(0)" (click)="scrollToSection('experience')" class="nav-link">
-          <i class="fas fa-briefcase"></i>
-          <span>Experience</span>
+        <a href="javascript:void(0)" (click)="scrollToSection('experience'); closeMenu()" class="nav-link">
+          <i class="fas fa-briefcase"></i> <span>Experience</span>
         </a>
       </li>
       <li [class.active]="activeSection === 'skills'">
-        <a href="javascript:void(0)" (click)="scrollToSection('skills')" class="nav-link">
-          <i class="fas fa-tools"></i>
-          <span>Skills</span>
+        <a href="javascript:void(0)" (click)="scrollToSection('skills'); closeMenu()" class="nav-link">
+          <i class="fas fa-tools"></i> <span>Skills</span>
         </a>
       </li>
       <li [class.active]="activeSection === 'projects'">
-        <a href="javascript:void(0)" (click)="scrollToSection('projects')" class="nav-link">
-          <i class="fas fa-project-diagram"></i>
-          <span>Projects</span>
+        <a href="javascript:void(0)" (click)="scrollToSection('projects'); closeMenu()" class="nav-link">
+          <i class="fas fa-project-diagram"></i> <span>Projects</span>
         </a>
       </li>
       <li [class.active]="activeSection === 'contact'">
-        <a href="javascript:void(0)" (click)="scrollToSection('contact')" class="nav-link">
-          <i class="fas fa-envelope"></i>
-          <span>Contact</span>
+        <a href="javascript:void(0)" (click)="scrollToSection('contact'); closeMenu()" class="nav-link">
+          <i class="fas fa-envelope"></i> <span>Contact</span>
         </a>
       </li>
     </ul>
@@ -51,35 +50,14 @@
 </nav>
 
 <!-- Sections -->
-<div id="hero">
-  <app-hero></app-hero>
-</div>
-
-<div id="education">
-  <app-education></app-education>
-</div>
-
-<div id="experience">
-  <app-experience></app-experience>
-</div>
-
-<div id="skills">
-  <app-skills></app-skills>
-</div>
-
-<div id="projects">
-  <app-projects></app-projects>
-</div>
-
-<div id="contact">
-  <app-contact></app-contact>
-</div>
+<div id="hero"><app-hero></app-hero></div>
+<div id="education"><app-education></app-education></div>
+<div id="experience"><app-experience></app-experience></div>
+<div id="skills"><app-skills></app-skills></div>
+<div id="projects"><app-projects></app-projects></div>
+<div id="contact"><app-contact></app-contact></div>
 
 <!-- Go to Top Button -->
-<button 
-  *ngIf="showGoToTop" 
-  class="go-to-top" 
-  (click)="scrollToTop()">
+<button *ngIf="showGoToTop" class="go-to-top" (click)="scrollToTop()">
   <i class="fas fa-arrow-up"></i>
 </button>
-

@@ -1,3 +1,4 @@
+/* General Section */
 .experience-section {
     padding: 5rem 2rem;
     background: linear-gradient(135deg, #f9f9f9, #ffffff);
@@ -7,7 +8,7 @@
     overflow: hidden;
 }
 
-/* Timeline Line */
+/* Timeline Line (Hidden on Mobile) */
 .timeline-line {
     position: absolute;
     left: 50%;
@@ -16,6 +17,12 @@
     width: 4px;
     background: linear-gradient(180deg, #6cb2eb, #f9a826);
     transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        display: none;
+    }
 }
 
 /* Experience Item */
@@ -27,7 +34,7 @@
     margin-bottom: 6rem;
 }
 
-/* Company Logo Styling */
+/* Company Logo */
 .company-logo {
     position: absolute;
     left: 50%;
@@ -50,8 +57,7 @@
     object-fit: contain;
 }
 
-/* Content Styling */
-/* Content Styling */
+/* Experience Content */
 .experience-content {
     background: #ffffff;
     border: 1px solid #ddd;
@@ -61,7 +67,7 @@
     width: 45%;
     position: relative;
     animation: fadeInUp 1s ease-in-out;
-    text-align: justify; /* Justify content */
+    text-align: justify;
 }
 
 .experience-content.left {
@@ -79,7 +85,7 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* Text Content Styling */
+/* Text Content */
 .text-content h3 {
     font-size: 1.8rem;
     color: #6cb2eb;
@@ -118,14 +124,50 @@
     font-size: 1.2rem;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 3rem 1.5rem;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .experience-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .company-logo {
+        position: relative;
+        left: 0;
+        transform: translate(0, 0);
+        margin-bottom: 15px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .experience-content {
+        width: 90%;
+        text-align: left;
+        transform: none;
+        padding: 1.5rem;
+    }
+
+    .experience-content.left,
+    .experience-content.right {
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .text-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .text-content h4 {
+        font-size: 1.3rem;
+    }
+
+    .text-content ul li {
+        font-size: 0.95rem;
     }
 }

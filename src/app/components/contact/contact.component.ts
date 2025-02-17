@@ -12,17 +12,6 @@ import emailjs from '@emailjs/browser';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
-  contactInfo = {
-    email: 'vm@hawk.iit.edu',
-    phone: '+1 (872)-258-8900',
-    linkedin: 'https://www.linkedin.com/in/vismayam/',
-    github: 'https://github.com/VismayaMohanram',
-    social: {
-      instagram: 'https://instagram.com/your_instagram_handle',
-      twitter: 'https://twitter.com/your_twitter_handle',
-    },
-  };
-
   formData = {
     name: '',
     email: '',
@@ -45,7 +34,7 @@ export class ContactComponent {
     emailjs
       .send(serviceId, templateId, templateParams, userId)
       .then(
-        (response) => {
+        () => {
           this.toastr.success('Your message has been sent successfully!', 'Success');
           this.formData = { name: '', email: '', message: '' }; // Reset form
         },

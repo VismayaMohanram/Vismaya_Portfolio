@@ -11,7 +11,7 @@ export class HeroComponent implements AfterViewInit {
   private ctx!: CanvasRenderingContext2D;
   private particles: Particle[] = [];
   private mouse = { x: 0, y: 0, radius: 150 };
-  private texts = ['Data Engineer', 'ML Enthusiast', 'Cloud Specialist'];
+  private texts = ['ML Enthusiast', 'Cloud Specialist', 'Big Data Engineer'];
 
   constructor(private elRef: ElementRef, private router: Router) {}
 
@@ -68,7 +68,10 @@ export class HeroComponent implements AfterViewInit {
     window.addEventListener('resize', () => this.resizeCanvas());
     window.addEventListener('mousemove', (e) => this.handleMouseMove(e));
 
-    this.createParticlesFromText('DATA ENGINEER');
+    if (window.innerWidth > 768) {
+      this.createParticlesFromText('DATA ENGINEER');
+    }
+    
     this.animateParticles();
   }
 
@@ -76,7 +79,10 @@ export class HeroComponent implements AfterViewInit {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
     this.particles = [];
-    this.createParticlesFromText('DATA ENGINEER');
+
+    if (window.innerWidth > 768) {
+      this.createParticlesFromText('DATA ENGINEER');
+    }
   }
 
   private handleMouseMove(e: MouseEvent): void {
@@ -93,7 +99,6 @@ export class HeroComponent implements AfterViewInit {
     this.ctx.fillStyle = 'white';
     this.ctx.textAlign = 'center';
 
-    // Shift further to the right
     this.ctx.fillText(text, this.canvas.width / 2 + 200, this.canvas.height / 2);
 
     const textData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height).data;
@@ -148,7 +153,7 @@ class Particle {
 
     if (distance < mouse.radius) {
       const angle = Math.atan2(dy, dx);
-      this.x -= Math.cos(angle) * 10; // Scatter more
+      this.x -= Math.cos(angle) * 10;
       this.y -= Math.sin(angle) * 10;
     } else {
       this.x += (this.originX - this.x) * 0.05;
