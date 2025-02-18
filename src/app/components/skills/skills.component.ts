@@ -36,7 +36,7 @@ export class SkillsComponent {
     { name: 'Python', level: 90, icon: 'fab fa-python', category: 'Programming' },
     { name: 'SQL', level: 85, icon: 'fas fa-database', category: 'Programming' },
     { name: 'Java', level: 80, icon: 'fab fa-java', category: 'Programming' },
-    { name: 'TypeScript', level: 75, icon: 'fab fa-js-square', category: 'Programming' },
+    { name: 'MongoDB', level: 50, icon: 'fas fa-leaf', category: 'Programming' },
 
     // Cloud (4)
     { name: 'Azure', level: 75, icon: 'fab fa-microsoft', category: 'Cloud' },
@@ -44,17 +44,21 @@ export class SkillsComponent {
     { name: 'Google Cloud', level: 65, icon: 'fab fa-google', category: 'Cloud' },
     { name: 'IBM Cloud', level: 60, icon: 'fas fa-cloud', category: 'Cloud' },
 
-    // Analytics (4)
+    // Analytics (8)
     { name: 'Power BI', level: 85, icon: 'fas fa-chart-line', category: 'Analytics' },
     { name: 'Tableau', level: 70, icon: 'fas fa-table', category: 'Analytics' },
     { name: 'Excel', level: 80, icon: 'fas fa-file-excel', category: 'Analytics' },
     { name: 'Snowflake', level: 82, icon: 'fas fa-snowflake', category: 'Analytics' },
+    { name: 'ETL Pipelines', level: 75, icon: 'fas fa-sync', category: 'Analytics' },
+    { name: 'Data Modeling', level: 80, icon: 'fas fa-project-diagram', category: 'Analytics' },
+    { name: 'Data Warehouse', level: 85, icon: 'fas fa-database', category: 'Analytics' },
+    { name: 'VLOOKUP', level: 70, icon: 'fas fa-search', category: 'Analytics' },
 
     // Development Tools (4)
     { name: 'Docker', level: 75, icon: 'fab fa-docker', category: 'Development Tools' },
     { name: 'Git', level: 85, icon: 'fab fa-git-alt', category: 'Development Tools' },
     { name: 'JIRA', level: 80, icon: 'fas fa-tasks', category: 'Development Tools' },
-    { name: 'Kubernetes', level: 70, icon: 'fas fa-server', category: 'Development Tools' },
+    { name: 'Jupyter', level: 75, icon: 'fas fa-book', category: 'Development Tools' },
 
     // Machine Learning & AI (8)
     { name: 'TensorFlow', level: 70, icon: 'fas fa-brain', category: 'Machine Learning & AI' },

@@ -13,8 +13,8 @@ export class ExperienceComponent {
     {
       company: 'Flexday AI',
       logo: 'assets/images/Flexday_AI.jpg',
-      duration: 'Sept 2024 - March 2025',
-      title: 'Software Developer',
+      duration: 'Sept 2024 - Present',
+      title: 'Software Developer Intern',
       details: [
         'Designed and developed an AI-powered data pipeline to streamline data migration, transformation, and integration for enterprise customer support systems, ensuring seamless data conversion and compliance with industry standards.',
         'Led end-to-end data migration, mapping legacy system data using SQL and Python, achieving 95%+ accuracy in AI-driven query handling.',
@@ -28,8 +28,8 @@ export class ExperienceComponent {
     {
       company: 'Flexday AI',
       logo: 'assets/images/Flexday_AI.jpg',
-      duration: 'Sept 2024 - March 2025',
-      title: 'Software Developer',
+      duration: 'Sept 2024 - Present',
+      title: 'Software Developer Intern',
       details: [
         'Developed a Proof of Concept (PoC) to automate employee data migration, transformation, and visualization by integrating BambooHR with Merge.dev, enhancing HR data accessibility and operational efficiency.',
         'Migrated & structured 10,000+ employee records, ensuring 99% data accuracy through automated mapping and transformation.',
@@ -40,7 +40,7 @@ export class ExperienceComponent {
       ]
     },
     {
-      company: 'Swiss Re',
+      company: 'Infosys Limited (Client: Swiss Re)',
       logo: 'assets/images/Swiss_Re.png',
       duration: 'June 2020 - Aug 2022',
       title: 'Data Engineer',
@@ -55,7 +55,7 @@ export class ExperienceComponent {
       ]
     },
     {
-      company: 'Swiss Re',
+      company: 'Infosys Limited (Client: Swiss Re)',
       logo: 'assets/images/Swiss_Re.png',
       duration: 'July 2018 - June 2020',
       title: 'Data Analyst',

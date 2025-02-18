@@ -11,7 +11,7 @@ export class HeroComponent implements AfterViewInit {
   private ctx!: CanvasRenderingContext2D;
   private particles: Particle[] = [];
   private mouse = { x: 0, y: 0, radius: 150 };
-  private texts = ['ML Enthusiast', 'Cloud Specialist', 'Big Data Engineer'];
+  private texts = ['ML Enthusiast', 'Data Analyst', 'Big Data Engineer'];
 
   constructor(private elRef: ElementRef, private router: Router) {}
 
